@@ -2,7 +2,7 @@
 $characters = array(array('name' => 'Peter Parker', 'email' => 'peterparker@mail.com',),
 array('name' => 'Clark Kent', 'email' => 'clarkkent@mail.com',),
 array('name' => 'Harry Potter', 'email' => 'harrypotter@mail.com',));
-$characters[] = array('name' => 'Graha Tia', 'email' => 'grahatia@mail.com',);
+$characters[] = array('name' => 'Graha Tia', 'email' => 'crystalexarch@mail.com',);
 print_r($characters);
 
 $xml = new SimpleXMLElement(' ');
