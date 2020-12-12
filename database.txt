@@ -1,0 +1,36 @@
+mysql> CREATE SCHEMA store
+mysql> USE store
+
+mysql> CREATE TABLE customer(
+	-> id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	-> name VARCHAR(255) NOT NULL,
+	-> address VARCHAR(255),
+	-> phone VARCHAR(15),
+	-> ) ENGINE=InnoDb;
+
+mysql> CREATE TABLE inventory(
+	-> id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	-> name VARCHAR(100),
+	-> description VARCHAR(500),
+	-> weight FLOAT,
+	-> price FLOAT,
+	-> ) ENGINE=InnoDb;
+
+mysql> CREATE TABLE transaction(
+	-> number INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	-> FOREIGN KEY (cust_id) REFERENCES customer(id),
+	-> amount FLOAT,
+	-> FOREIGN KEY (item_id) REFERENCES inventory(id),
+	-> time DATETIME,
+	-> ) ENGINE=InnoDb;
+
+
+
+mysql> INSERT INTO customer (id, name, address, phone)
+	-> VALUES ("398", "Adam Smith", "123 Somewhere Rd", "(523)539-9234");
+
+mysql> INSERT INTO inventory (id, name, description, weight, price)
+	-> VALUES ("19486", "toy plane", "small, blue remote controlled toy plane", "4.5" "59.99");
+
+mysql> INSERT INTO transaction(number, cust_id, amount, item_id, time)
+	-> VALUES ("28", "398", "59.99", "19486", "2015-04-17 15:38:50"
